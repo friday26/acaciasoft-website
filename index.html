@@ -153,24 +153,9 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: var(--navy);
+      background: linear-gradient(rgba(17, 24, 39, 0.72), rgba(17, 24, 39, 0.85)),
+        url("https://images.unsplash.com/photo-1758545760408-754dddae1d09?w=1920&q=85&fit=crop") center/cover no-repeat;
       color: var(--white);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: transparent;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 28px 28px;
-      opacity: 0.35;
     }
 
     .hero-content {
