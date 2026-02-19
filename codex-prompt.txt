@@ -1,0 +1,98 @@
+Completely rebuild index.html from scratch. This is a full redesign. The goal: a website that looks like it belongs next to Stripe, Linear, and Vercel — dark, premium, and alive. It should scream innovation.
+
+## DESIGN DIRECTION
+- Full dark theme throughout — NO white or light gray sections. Everything is dark.
+- Brand colors: Background #0A0F1A (near-black navy), Surface #111827, Cards #1A2235, Accent Red #CC2229
+- Red accents should GLOW — use box-shadow and text-shadow with rgba(204,34,41,0.4) for depth
+- Typography: Google Font "Inter" — bold and oversized headlines (clamp-based responsive sizing)
+- Glassmorphism cards: backdrop-filter: blur(12px), semi-transparent backgrounds, subtle border rgba(255,255,255,0.08)
+- Everything feels alive: scroll animations, hover effects, animated stats
+
+## SECTIONS (in order)
+
+### 1. NAVBAR
+- Sticky, transparent that becomes solid dark on scroll (JS scroll listener)
+- Logo: "Acaciasoft" text in white bold with a small red square (■) before the name
+- Nav links: About, Services, Clients, Team, Contact
+- CTA button: "Get in Touch" — red background, slight glow on hover
+- Mobile: hamburger menu
+
+### 2. HERO
+- Full viewport height
+- Background: linear-gradient(rgba(10,15,26,0.7), rgba(10,15,26,0.9)), url("https://images.unsplash.com/photo-1758545760408-754dddae1d09?w=1920&q=85&fit=crop") center/cover no-repeat
+- Animated canvas particle/network in the background (pure JS — draw dots connected by lines, slowly drifting) rendered BEHIND the text using z-index
+- Eyebrow: small red uppercase label "ENERGY SOFTWARE SPECIALISTS"
+- Headline: Giant bold — We Power the <span red>Energy Grid</span> of Tomorrow.
+- Subtext about the company
+- Two CTAs: "See Our Work" (red glowing) + "Learn More" (ghost outline)
+- Animated bouncing scroll indicator at bottom
+
+### 3. STATS BAR
+- Dark surface card, full width
+- Three animated count-up stats (Intersection Observer triggers count from 0):
+  * 8,600+ MW — Combined Client Capacity
+  * 50+ Engineers — Specialized Energy Tech Team
+  * 10+ Years — Industry Experience
+- Stats in large bold red numbers, labels in muted gray
+- Red glowing divider lines between stats
+
+### 4. ABOUT
+- Two column layout
+- Left: Large bold heading + body text about the company being a Philippine-based software company for energy sector
+- Right: A terminal-style card (dark bg, monospace font, green-tinted or white text) showing:
+  > acacia --status
+  [checkmark] Clients connected: 8,600+ MW
+  [checkmark] WESM integrations: active
+  [checkmark] Real-time monitoring: running
+  [checkmark] Team online: 50+ engineers
+  With a blinking cursor at the end (CSS animation)
+
+### 5. SERVICES — "What We Build"
+- 4 glassmorphism cards (backdrop-filter blur, semi-transparent, subtle white border):
+  1. Custom Development — Web, Mobile, APIs, OPC Server, Plant Data Integration, DB
+  2. Consulting — IT, Energy Market, Data Analysis, Forecasting
+  3. Documentation — Process and Systems Documentation
+  4. Cloud — Hosting, Google Workspace, Cloud Migration
+- Cards lift on hover (translateY -6px) with red glow box-shadow
+- Red bottom border accent on hover
+
+### 6. WHO WE SERVE — "Built for the Energy Sector"
+- 3 full-width horizontal cards stacked:
+  1. Power Generators
+  2. Renewable Energy Suppliers (RES)
+  3. Distribution Utilities (DUs)
+- Each: icon + title left, description right, red left-edge accent bar
+
+### 7. WHY ACACIASOFT — "Why the Best Choose Us"
+- 4 value props in a row: Industry Expertise, Locally Compliant, Agile and Transparent, Built to Scale
+- Large icon, bold title, short description
+- Animated red underline on hover
+
+### 8. TEAM — "The Team"
+- 3 glassmorphism placeholder cards with pulsing "COMING SOON" badges
+
+### 9. CONTACT
+- Bold headline: "Let's build what's next."
+- Contact form: Name, Email, Message, Send button (red glowing)
+- Company info right side: domain acacia-soft.com, email hello@acacia-soft.com, Philippines, Focus: WESM energy trading
+
+### 10. FOOTER
+- Dark minimal: logo+tagline left, nav links center, copyright right
+
+## ANIMATIONS
+- Scroll reveal: sections fade + translateY via Intersection Observer
+- Stat counters: count up from 0 on scroll into view
+- Navbar: solid bg on scroll
+- Hover: cards lift + red glow
+- Terminal: blinking cursor CSS
+- Particle canvas hero: slow drifting dots connected by lines, subtle red tint
+
+## TECHNICAL
+- Single index.html, no external JS libraries (Google Fonts CDN only)
+- Vanilla JS for all animations
+- Fully mobile responsive
+- Smooth scroll
+
+Make it look like it cost $50,000 to build.
+
+When completely finished, run: openclaw system event --text "Done: Full Acaciasoft redesign complete" --mode now
