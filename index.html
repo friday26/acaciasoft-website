@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acaciasoft — Think. Create. Innovate.</title>
+  <meta name="description" content="Philippine-based software company specializing in custom technology solutions for the energy sector. Web platforms, internal tools, enterprise systems, and energy trading solutions for WESM." />
+  <meta name="theme-color" content="#111827" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.css" />
+  <style>
+    :root {
+      --navy: #111827;
+      --accent: #CC2229;
+      --white: #FFFFFF;
+      --light: #F9FAFB;
+      --text: #E5E7EB;
+      --text-dark: #111827;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --shadow: 0 25px 60px rgba(17, 24, 39, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, 90%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(204, 34, 41, 0.25);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 14px 30px rgba(204, 34, 41, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.25);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(17, 24, 39, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--white);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 12px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: transparent;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.35;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 640px;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.1rem);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: var(--text);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .stats-bar {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat {
+      text-align: left;
+    }
+
+    .stat h3 {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .about {
+      background: var(--light);
+      color: var(--text-dark);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .about-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+    }
+
+    .services {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      padding: 26px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(204, 34, 41, 0.4);
+      box-shadow: 0 12px 28px rgba(17, 24, 39, 0.28);
+    }
+
+    .service-card span {
+      font-size: 1.8rem;
+      display: inline-flex;
+      margin-bottom: 14px;
+    }
+
+    .service-card h4 {
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .light-section {
+      background: var(--light);
+      color: var(--text-dark);
+    }
+
+    .light-section .section-subtitle {
+      color: var(--muted);
+    }
+
+    .client-card,
+    .value-card,
+    .team-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px rgba(17, 24, 39, 0.08);
+    }
+
+    .client-card h4,
+    .value-card h4,
+    .team-card h4 {
+      margin-bottom: 10px;
+    }
+
+    .client-card p,
+    .value-card p,
+    .team-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .value-card span {
+      font-size: 1.6rem;
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .team-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(17, 24, 39, 0.9);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.85rem;
+    }
+
+    .contact {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
+      font-family: inherit;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .contact-details strong {
+      color: var(--white);
+    }
+
+    footer {
+      background: var(--navy);
+      padding: 40px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .stats-bar {
+        padding: 18px;
+      }
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Acaciasoft</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Who We Serve</a>
+        <a href="#why">Why Us</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-secondary" href="#services">Our Services</a>
+        <a class="btn btn-primary" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Acacia-soft.com</div>
+        <h1>Think. Create. Innovate.</h1>
+        <p>
+          Acaciasoft is a Philippine-based software company crafting high-impact technology for the
+          energy sector. We build web platforms, internal tools, and enterprise systems for WESM
+          energy trading, monitoring, and real-time data intelligence.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">Our Services</a>
+          <a class="btn btn-secondary" href="#contact">Contact Us</a>
+        </div>
+        <div class="stats-bar">
+          <div class="stat">
+            <h3>8,600+ MW</h3>
+            <span>Combined client capacity</span>
+          </div>
+          <div class="stat">
+            <h3>50+ Engineers</h3>
+            <span>Specialized energy tech team</span>
+          </div>
+          <div class="stat">
+            <h3>2 Regions</h3>
+            <span>Luzon &amp; Visayas coverage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <h2 class="section-title">Energy-first software, built in the Philippines.</h2>
+          <p class="section-subtitle">
+            We are a 50-person team delivering software for power generators, renewable suppliers, and
+            distribution utilities. From real-time monitoring dashboards to enterprise integration layers,
+            we help energy businesses operate with clarity, speed, and compliance.
+          </p>
+          <p>
+            Acaciasoft partners closely with leadership teams to modernize operations, strengthen data
+            pipelines, and deliver mission-critical systems that scale with market volatility.
+          </p>
+        </div>
+        <div class="about-card">
+          <h4>WESM &amp; Energy Trading</h4>
+          <p>
+            We design platforms tailored for the Philippine Wholesale Electricity Spot Market (WESM),
+            supporting real-time trading, bid monitoring, and data transparency for competitive energy
+            operations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <h2 class="section-title">Services built for energy leaders</h2>
+      <p class="section-subtitle">
+        Our teams work end-to-end across development, consulting, documentation, and cloud operations
+        to keep your systems reliable, secure, and responsive.
+      </p>
+      <div class="card-grid">
+        <div class="service-card">
+          <span>⚙️</span>
+          <h4>Custom Development</h4>
+          <p>Web &amp; mobile apps, APIs, integrations, OPC servers, plant data equipment, and database management.</p>
+        </div>
+        <div class="service-card">
+          <span>📊</span>
+          <h4>Consulting</h4>
+          <p>IT consulting, energy market analysis, forecasting, and data intelligence strategy.</p>
+        </div>
+        <div class="service-card">
+          <span>📝</span>
+          <h4>Documentation</h4>
+          <p>Process &amp; system documentation to strengthen compliance, onboarding, and continuity.</p>
+        </div>
+        <div class="service-card">
+          <span>☁️</span>
+          <h4>Cloud</h4>
+          <p>Web and application hosting, Google Workspace enablement, and cloud migration support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light-section" id="clients">
+    <div class="container">
+      <h2 class="section-title">Who we serve</h2>
+      <p class="section-subtitle">We partner with energy organizations across the Philippines.</p>
+      <div class="card-grid">
+        <div class="client-card">
+          <h4>Power Generators</h4>
+          <p>Operational intelligence, fleet monitoring, and trading enablement.</p>
+        </div>
+        <div class="client-card">
+          <h4>Renewable Energy Suppliers</h4>
+          <p>Data visibility, forecasting, and WESM compliance platforms.</p>
+        </div>
+        <div class="client-card">
+          <h4>Distribution Utilities</h4>
+          <p>Integrated systems for market operations, reporting, and customer service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light-section" id="why">
+    <div class="container">
+      <h2 class="section-title">Why Acaciasoft</h2>
+      <p class="section-subtitle">Focused expertise meets transparent execution.</p>
+      <div class="card-grid">
+        <div class="value-card">
+          <span>⚡</span>
+          <h4>Industry Expertise</h4>
+          <p>Built by specialists in energy trading, monitoring, and enterprise operations.</p>
+        </div>
+        <div class="value-card">
+          <span>✅</span>
+          <h4>Locally Compliant</h4>
+          <p>Aligned with Philippine regulatory standards and WESM workflows.</p>
+        </div>
+        <div class="value-card">
+          <span>🧭</span>
+          <h4>Agile &amp; Transparent</h4>
+          <p>Clear milestones, rapid iteration, and collaborative delivery.</p>
+        </div>
+        <div class="value-card">
+          <span>📈</span>
+          <h4>Scalable</h4>
+          <p>Architected to grow with new plants, markets, and regional expansion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light-section" id="team">
+    <div class="container">
+      <h2 class="section-title">Meet the team</h2>
+      <p class="section-subtitle">A growing team of energy technologists and builders.</p>
+      <div class="card-grid">
+        <div class="team-card">
+          <h4>Engineering</h4>
+          <p>System architects, platform engineers, and data specialists.</p>
+          <div class="team-overlay">Coming Soon</div>
+        </div>
+        <div class="team-card">
+          <h4>Product &amp; Design</h4>
+          <p>UX strategists, product owners, and market analysts.</p>
+          <div class="team-overlay">Coming Soon</div>
+        </div>
+        <div class="team-card">
+          <h4>Operations</h4>
+          <p>Delivery, compliance, and client success leaders.</p>
+          <div class="team-overlay">Coming Soon</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Let’s build what’s next</h2>
+      <p class="section-subtitle">Tell us about your energy technology needs.</p>
+      <div class="contact-grid">
+        <form>
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="text" name="subject" placeholder="Subject" />
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+        <div class="contact-details">
+          <div><strong>Acaciasoft</strong></div>
+          <div>Philippines • Energy Software Specialists</div>
+          <div>Domain: acacia-soft.com</div>
+          <div>Email: hello@acacia-soft.com</div>
+          <div>Focus: WESM, energy trading, monitoring, real-time data</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© 2026 Acaciasoft. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", event => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      alert("Thanks! We will be in touch soon.");
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</body>
+</html>
